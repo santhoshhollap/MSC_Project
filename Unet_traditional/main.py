@@ -388,5 +388,5 @@ class Main:
 		return dice_scores
 
 if __name__ == '__main__':
-	Main(load_model_params=True, save_model_params=False, saved_params_path="models/unettrainval.pt", train=False, test=True, eval=False, epochs = 611, loss_fn='DiceFocal', dataset_debug=False,
+	Main(load_model_params=False, save_model_params=True, saved_params_path="models/tempunettrainval.pt", train=True, test=False, eval=False, epochs = 611, loss_fn='DiceFocal', dataset_debug=False,
 		tensorboard_log='runs/unet_aug_lr1e-3_reg1e-3_cedice_test_1', model_arch='Unet', test_path='test_results', aug=False, early_stop=False)
