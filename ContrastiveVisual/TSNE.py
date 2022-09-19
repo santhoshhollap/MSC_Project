@@ -2,6 +2,11 @@
 Usage: python3 TSNE.py
 '''
 
+DEFINE_CLASS1_OUTLIER = -50
+DEFINE_CLASS2_OUTLIER = -20
+DEFINE_CLASS3_OUTLIER = 30
+
+
 import numpy as np 
 import matplotlib.pyplot as plt 
 from sklearn.manifold import TSNE
@@ -15,7 +20,7 @@ z = tsne.fit_transform(fts)
 x= []
 y = []
 for i,j in zip(z[:,0],z[:,1]):
-    if (j < -50) and (i>-20) and (i<30):
+    if (j < DEFINE_CLASS1_OUTLIER) and (i>-DEFINE_CLASS2_OUTLIER) and (i<DEFINE_CLASS3_OUTLIER):
         continue
     else:
         x.append(i)
